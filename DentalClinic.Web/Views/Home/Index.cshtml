@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="p-4 rounded-3 bg-light border">
+    <h1 class="h3 mb-2">Dental Clinic – Web</h1>
+    <p class="text-muted mb-3">CRUD pentru Doctors, Patients, Treatments, Appointments, Reviews + autentificare/autorizare (Identity).</p>
+
+    <div class="d-flex flex-wrap gap-2">
+        <a class="btn btn-primary" asp-controller="Doctors" asp-action="Index">Doctors</a>
+        <a class="btn btn-primary" asp-controller="Patients" asp-action="Index">Patients</a>
+        <a class="btn btn-primary" asp-controller="Treatments" asp-action="Index">Treatments</a>
+        <a class="btn btn-primary" asp-controller="Appointments" asp-action="Index">Appointments</a>
+        <a class="btn btn-primary" asp-controller="Reviews" asp-action="Index">Reviews</a>
+    </div>
+
+    <hr />
+    <p class="mb-0">
+        Cont default: <strong>admin</strong> / <strong>Admin123!</strong>
+        (rol: Admin)
+    </p>
+</div>

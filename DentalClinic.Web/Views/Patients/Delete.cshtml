@@ -1,0 +1,21 @@
+@model DentalClinic.Web.Models.Patient
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="h3 text-danger">Delete Patient</h1>
+<p>Sigur vrei să ștergi acest element?</p>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">Nume complet</dt><dd class="col-sm-9">@Model.FullName</dd>
+<dt class="col-sm-3">Data nașterii</dt><dd class="col-sm-9">@Model.BirthDate</dd>
+<dt class="col-sm-3">Telefon</dt><dd class="col-sm-9">@Model.Phone</dd>
+<dt class="col-sm-3">Email</dt><dd class="col-sm-9">@Model.Email</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>

@@ -1,0 +1,42 @@
+@model DentalClinic.Web.Models.Appointment
+
+<div class="mb-3">
+    <label asp-for="PatientId" class="form-label">Patient</label>
+    <select asp-for="PatientId" class="form-select" asp-items="ViewBag.PatientId"></select>
+    <span asp-validation-for="PatientId" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="DoctorId" class="form-label">Doctor</label>
+    <select asp-for="DoctorId" class="form-select" asp-items="ViewBag.DoctorId"></select>
+    <span asp-validation-for="DoctorId" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="TreatmentId" class="form-label">Treatment</label>
+    <select asp-for="TreatmentId" class="form-select" asp-items="ViewBag.TreatmentId"></select>
+    <span asp-validation-for="TreatmentId" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Date" class="form-label"></label>
+    <input asp-for="Date" class="form-control" type="date" />
+    <span asp-validation-for="Date" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Time" class="form-label"></label>
+    <input asp-for="Time" class="form-control" type="time" />
+    <span asp-validation-for="Time" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Notes" class="form-label"></label>
+    <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
+    <span asp-validation-for="Notes" class="text-danger"></span>
+</div>
+
+<div class="form-check mb-3">
+    <input class="form-check-input" asp-for="Completed" />
+    <label class="form-check-label" asp-for="Completed"></label>
+</div>

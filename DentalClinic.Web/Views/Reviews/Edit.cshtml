@@ -1,0 +1,19 @@
+@model DentalClinic.Web.Models.Review
+@{
+    ViewData["Title"] = "Edit Review";
+}
+
+<h1 class="h3">@ViewData["Title"]</h1>
+<hr />
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <partial name="_Form" />
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

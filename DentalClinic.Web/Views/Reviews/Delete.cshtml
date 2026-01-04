@@ -1,0 +1,23 @@
+@model DentalClinic.Web.Models.Review
+@{
+    ViewData["Title"] = "Delete Review";
+}
+
+<h1 class="h3 text-danger">@ViewData["Title"]</h1>
+<p>Sigur vrei să ștergi acest review?</p>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">Rating</dt><dd class="col-sm-9">@Model.Rating</dd>
+    <dt class="col-sm-3">Appointment</dt>
+    <dd class="col-sm-9">
+        @Model.Appointment?.Date.ToString("yyyy-MM-dd") @Model.Appointment?.Time.ToString(@"hh\:mm")
+        — @Model.Appointment?.Patient?.FullName / @Model.Appointment?.Doctor?.FullName
+    </dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>

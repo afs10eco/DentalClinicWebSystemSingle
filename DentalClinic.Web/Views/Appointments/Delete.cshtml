@@ -1,0 +1,22 @@
+@model DentalClinic.Web.Models.Appointment
+@{
+    ViewData["Title"] = "Delete Appointment";
+}
+
+<h1 class="h3 text-danger">@ViewData["Title"]</h1>
+<p>Sigur vrei să ștergi această programare?</p>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">Date</dt><dd class="col-sm-9">@Model.Date.ToString("yyyy-MM-dd")</dd>
+    <dt class="col-sm-3">Time</dt><dd class="col-sm-9">@Model.Time.ToString(@"hh\:mm")</dd>
+    <dt class="col-sm-3">Patient</dt><dd class="col-sm-9">@Model.Patient?.FullName</dd>
+    <dt class="col-sm-3">Doctor</dt><dd class="col-sm-9">@Model.Doctor?.FullName</dd>
+    <dt class="col-sm-3">Treatment</dt><dd class="col-sm-9">@Model.Treatment?.Name</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
